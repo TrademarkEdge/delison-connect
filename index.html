@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Delison Connect helps international manufacturers develop commercial opportunities across East Africa.">
+  <title>Delison Connect | African Market Development</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --navy: #071625;
+      --navy-light: #0d2438;
+      --gold: #c9a66b;
+      --cream: #f5f3ee;
+      --white: #ffffff;
+      --muted: #71808d;
+      --line: #dfe3e6;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--navy);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1180px, 90%);
+      margin: auto;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+      padding: 28px 0;
+      color: white;
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .logo span {
+      color: var(--gold);
+      font-size: 11px;
+      display: block;
+      letter-spacing: 4px;
+      margin-top: -2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 34px;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      opacity: .9;
+      transition: .3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .nav-button {
+      border: 1px solid rgba(255,255,255,.5);
+      padding: 11px 19px;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 760px;
+      background:
+        linear-gradient(90deg, rgba(4,16,28,.96) 0%, rgba(4,16,28,.80) 48%, rgba(4,16,28,.35) 100%),
+        url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2200&q=85")
+        center/cover;
+      display: flex;
+      align-items: center;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 760px;
+      padding-top: 70px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(48px, 7vw, 82px);
+      line-height: 1.02;
+      font-weight: 400;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 em {
+      color: var(--gold);
+      font-style: normal;
+    }
+
+    .hero p {
+      font-size: 19px;
+      max-width: 650px;
+      color: rgba(255,255,255,.82);
+      margin-bottom: 38px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 15px 25px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: .3s;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,.45);
+      color: white;
+    }
+
+    .btn-outline:hover {
+      border-color: white;
+    }
+
+    /* INTRO */
+
+    .intro {
+      padding: 110px 0;
+      background: var(--cream);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .section-label {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .intro h2,
+    .section-title {
+      font-family: Georgia, serif;
+      font-size: clamp(36px, 4vw, 54px);
+      font-weight: 400;
+      line-height: 1.15;
+      margin-top: 15px;
+    }
+
+    .intro-text {
+      font-size: 20px;
+      color: #3d4b56;
+      max-width: 680px;
+    }
+
+    /* SERVICES */
+
+    .services {
+      padding: 115px 0;
+    }
+
+    .section-heading {
+      max-width: 700px;
+      margin-bottom: 55px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      margin-top: 18px;
+      font-size: 17px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .service {
+      padding: 38px;
+      min-height: 240px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      transition: .3s;
+    }
+
+    .service:hover {
+      background: var(--cream);
+    }
+
+    .number {
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .service h3 {
+      font-family: Georgia, serif;
+      font-size: 25px;
+      font-weight: 400;
+      margin: 25px 0 12px;
+    }
+
+    .service p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* INDUSTRIES */
+
+    .industries {
+      background: var(--navy);
+      color: white;
+      padding: 110px 0;
+    }
+
+    .industries .section-heading p {
+      color: #aebac3;
+    }
+
+    .industry-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 55px;
+    }
+
+    .industry {
+      min-height: 260px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      background:
+        linear-gradient(0deg, rgba(3,12,21,.95), rgba(3,12,21,.15)),
+        url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80")
+        center/cover;
+    }
+
+    .industry:nth-child(2) {
+      background:
+        linear-gradient(0deg, rgba(3,12,21,.95), rgba(3,12,21,.15)),
+        url("https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&q=80")
+        center/cover;
+    }
+
+    .industry:nth-child(3) {
+      background:
+        linear-gradient(0deg, rgba(3,12,21,.95), rgba(3,12,21,.15)),
+        url("https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=900&q=80")
+        center/cover;
+    }
+
+    .industry:nth-child(4) {
+      background:
+        linear-gradient(0deg, rgba(3,12,21,.95), rgba(3,12,21,.15)),
+        url("https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=900&q=80")
+        center/cover;
+    }
+
+    .industry h3 {
+      font-family: Georgia, serif;
+      font-size: 24px;
+      font-weight: 400;
+    }
+
+    .industry p {
+      color: #ccd3d8;
+      font-size: 14px;
+      margin-top: 7px;
+    }
+
+    /* APPROACH */
+
+    .approach {
+      padding: 115px 0;
+    }
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 90px;
+      align-items: center;
+    }
+
+    .approach-list {
+      margin-top: 35px;
+    }
+
+    .approach-item {
+      display: flex;
+      gap: 22px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .approach-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .approach-item p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .approach-image {
+      min-height: 540px;
+      background:
+        linear-gradient(0deg, rgba(5,18,30,.25), rgba(5,18,30,.05)),
+        url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=85")
+        center/cover;
+    }
+
+    /* CTA */
+
+    .cta {
+      background: var(--cream);
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-family: Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(38px, 5vw, 62px);
+      max-width: 800px;
+      margin: 15px auto 22px;
+      line-height: 1.1;
+    }
+
+    .cta p {
+      color: var(--muted);
+      max-width: 620px;
+      margin: auto auto 32px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #04111d;
+      color: white;
+      padding: 55px 0 30px;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 50px;
+      padding-bottom: 45px;
+    }
+
+    .footer-brand {
+      max-width: 400px;
+    }
+
+    .footer-brand p {
+      color: #91a0aa;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .footer-contact {
+      text-align: right;
+    }
+
+    .footer-contact a {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.1);
+      padding-top: 25px;
+      color: #687883;
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 680px;
+      }
+
+      .hero h1 {
+        font-size: 50px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .intro-grid,
+      .approach-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .industry-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .approach-image {
+        min-height: 400px;
+      }
+
+      .footer-top,
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      .footer-contact {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .industry-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 43px;
+      }
+
+      .intro,
+      .services,
+      .approach,
+      .industries {
+        padding: 80px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="container nav-inner">
+      <a href="#" class="logo">
+        DELISON
+        <span>CONNECT</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#industries">Industries</a>
+        <a href="#approach">Approach</a>
+        <a href="#contact" class="nav-button">Start a Conversation</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="eyebrow">East Africa Market Development</div>
+
+        <h1>
+          Connecting global manufacturers with <em>African opportunity.</em>
+        </h1>
+
+        <p>
+          Delison Connect helps international manufacturers establish,
+          develop and grow commercial opportunities across East Africa.
+        </p>
+
+        <div class="buttons">
+          <a href="#contact" class="btn btn-primary">Explore the Market</a>
+          <a href="#services" class="btn btn-outline">Our Capabilities</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="intro">
+    <div class="container intro-grid">
+      <div>
+        <div class="section-label">The Opportunity</div>
+        <h2>A local partner for international ambition.</h2>
+      </div>
+
+      <div class="intro-text">
+        Entering a new market requires more than a product.
+        It requires relationships, market intelligence and someone
+        on the ground who understands how business is actually done.
+        <br><br>
+        Delison Connect bridges that gap between international
+        manufacturers and commercial opportunities in East Africa.
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="container">
+
+      <div class="section-heading">
+        <div class="section-label">What We Do</div>
+        <h2 class="section-title">From market entry to commercial growth.</h2>
+        <p>
+          We support international manufacturers with the relationships,
+          intelligence and commercial development required to build a
+          sustainable presence in East Africa.
+        </p>
+      </div>
+
+      <div class="service-grid">
+
+        <div class="service">
+          <div class="number">01</div>
+          <h3>Market Entry</h3>
+          <p>
+            Assessing opportunities, competitors, pricing and routes
+            to market for manufacturers entering East Africa.
+          </p>
+        </div>
+
+        <div class="service">
+          <div class="number">02</div>
+          <h3>Distributor Development</h3>
+          <p>
+            Identifying and engaging qualified distributors,
+            wholesalers and commercial partners.
+          </p>
+        </div>
+
+        <div class="service">
+          <div class="number">03</div>
+          <h3>Project Sourcing</h3>
+          <p>
+            Identifying developers, contractors and project
+            opportunities where international products can compete.
+          </p>
+        </div>
+
+        <div class="service">
+          <div class="number">04</div>
+          <h3>Commercial Representation</h3>
+          <p>
+            Providing a local business-development presence and
+            maintaining relationships with prospective buyers.
+          </p>
+        </div>
+
+        <div class="service">
+          <div class="number">05</div>
+          <h3>Market Intelligence</h3>
+          <p>
+            Practical intelligence on competitors, demand,
+            pricing, channels and emerging opportunities.
+          </p>
+        </div>
+
+        <div class="service">
+          <div class="number">06</div>
+          <h3>Strategic Partnerships</h3>
+          <p>
+            Connecting manufacturers with the businesses and
+            institutions capable of accelerating market growth.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="industries" id="industries">
+    <div class="container">
+
+      <div class="section-heading">
+        <div class="section-label">Initial Focus</div>
+        <h2 class="section-title">Building the future of African infrastructure.</h2>
+        <p>
+          We initially focus on sectors where international manufacturing
+          capability meets strong regional demand.
+        </p>
+      </div>
+
+      <div class="industry-grid">
+
+        <div class="industry">
+          <h3>Plumbing</h3>
+          <p>Pipes, fittings, valves and water systems.</p>
+        </div>
+
+        <div class="industry">
+          <h3>Sanitary Ware</h3>
+          <p>Bathrooms, sinks, toilets and related products.</p>
+        </div>
+
+        <div class="industry">
+          <h3>Tiles & Finishes</h3>
+          <p>Ceramic, porcelain, flooring and architectural finishes.</p>
+        </div>
+
+        <div class="industry">
+          <h3>Building Materials</h3>
+          <p>Selected products supporting residential and commercial development.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="approach" id="approach">
+    <div class="container approach-grid">
+
+      <div>
+        <div class="section-label">Our Approach</div>
+        <h2 class="section-title">Relationships first. Results always.</h2>
+
+        <div class="approach-list">
+
+          <div class="approach-item">
+            <div class="number">01</div>
+            <div>
+              <strong>Understand</strong>
+              <p>We learn the manufacturer's objectives, products and expansion priorities.</p>
+            </div>
+          </div>
+
+          <div class="approach-item">
+            <div class="number">02</div>
+            <div>
+              <strong>Identify</strong>
+              <p>We identify qualified buyers, distributors, projects and market opportunities.</p>
+            </div>
+          </div>
+
+          <div class="approach-item">
+            <div class="number">03</div>
+            <div>
+              <strong>Connect</strong>
+              <p>We facilitate introductions and develop commercial relationships on the ground.</p>
+            </div>
+          </div>
+
+          <div class="approach-item">
+            <div class="number">04</div>
+            <div>
+              <strong>Grow</strong>
+              <p>We support the manufacturer as opportunities move from conversation to commercial relationship.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="approach-image"></div>
+
+    </div>
+  </section>
+
+  <section class="cta" id="contact">
+    <div class="container">
+
+      <div class="section-label">Let's Connect</div>
+
+      <h2>Ready to explore East Africa?</h2>
+
+      <p>
+        Tell us about your company, products and expansion objectives.
+        We would be pleased to discuss the opportunity.
+      </p>
+
+      <a href="mailto:hello@delisonconnect.com" class="btn btn-primary">
+        hello@delisonconnect.com
+      </a>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+
+      <div class="footer-top">
+
+        <div class="footer-brand">
+          <div class="logo">
+            DELISON
+            <span>CONNECT</span>
+          </div>
+
+          <p>
+            Connecting global manufacturers with African markets.
+          </p>
+        </div>
+
+        <div class="footer-contact">
+          <div>Kenya · East Africa</div>
+          <br>
+          <a href="mailto:hello@delisonconnect.com">
+            hello@delisonconnect.com
+          </a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Delison Connect. All rights reserved.</div>
+        <div>East Africa Market Development & Commercial Representation</div>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
