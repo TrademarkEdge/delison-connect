@@ -218,6 +218,7 @@
     .services {
       padding: 115px 0;
       position: relative;
+      min-height: 780px;
       background-image: url("Nairobi China Link.jpg");
       background-size: cover;
       background-position: center;
@@ -227,6 +228,8 @@
     .section-heading {
       max-width: 700px;
       margin-bottom: 55px;
+      position: relative;
+      z-index: 2;
     }
 
     .section-heading p {
@@ -239,6 +242,8 @@
       display: grid;
       position: absolute;
       bottom: 0;
+      left: 0;
+      width: 100%
       grid-template-columns: repeat(3, 1fr);
       border-top: 1px solid var(--line);
       border-left: 1px solid var(--line);
@@ -268,13 +273,13 @@
       font-family: Georgia, serif;
       font-size: 25px;
       font-weight: 400;
-      color: var(--navy);
+      color: var(--cream);
       margin: 25px 0 12px;
       white-space: nowrap;
     }
 
     .service p {
-      color: var(--muted);
+      color: rgba(255,255,255,0.78);
       font-size: 15px;
       line-height: 1.6;
       max-width: 340px;
