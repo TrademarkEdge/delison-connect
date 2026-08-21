@@ -754,36 +754,135 @@
         We would be pleased to discuss the opportunity.
       </p>
 
-      <form action="https://formspree.io/f/xaewkwkj" method="POST">
+      <div class="contact-options">
+  <button type="button" class="btn btn-primary" id="open-enquiry">
+    Send us an enquiry
+  </button>
 
-    <input type="hidden" name="_subject" value="New Delison Connect Enquiry">
+  <span class="contact-or">or email us directly at</span>
 
-    <label for="name">Full Name</label>
-    <input type="text" id="name" name="name" placeholder="Your full name" required>
-
-    <label for="company">Company Name</label>
-    <input type="text" id="company" name="company" placeholder="Your company" required>
-
-    <label for="email">Work Email</label>
-    <input type="email" id="email" name="email" placeholder="you@company.com" required>
-
-    <label for="phone">Phone / WhatsApp</label>
-    <input type="tel" id="phone" name="phone" placeholder="+254 ...">
-
-    <label for="industry">Product / Industry</label>
-    <input type="text" id="industry" name="industry" placeholder="What product or industry are you in?" required>
-
-    <label for="message">Tell us about your opportunity</label>
-    <textarea id="message" name="message" rows="5" placeholder="Tell us about your company, products and expansion objectives." required></textarea>
-
-    <button type="submit" class="btn btn-primary">Send Enquiry</button>
-
-</form>
+  <a href="mailto:hello@delisonconnect.com" class="contact-email">
+    hello@delisonconnect.com
+  </a>
+</div>
         
   
 
     </div>
   </section>
+  <div class="enquiry-modal" id="enquiry-modal" aria-hidden="true">
+
+  <div class="enquiry-overlay" id="close-enquiry"></div>
+
+  <div class="enquiry-box" role="dialog" aria-modal="true">
+
+    <button type="button" class="enquiry-close" id="close-enquiry-btn">
+      &times;
+    </button>
+
+    <div class="section-label">Send an enquiry</div>
+
+    <h2>Let's discuss your opportunity.</h2>
+
+    <p class="enquiry-intro">
+      Tell us about your company, products and expansion objectives.
+    </p>
+
+    <form
+      action="https://formspree.io/f/xaewkwkj"
+      method="POST"
+      id="delison-enquiry-form"
+    >
+
+      <input
+        type="hidden"
+        name="_subject"
+        value="New Delison Connect Enquiry"
+      >
+
+      <label for="name">Full Name</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Your full name"
+        required
+      >
+
+      <label for="company">Company</label>
+      <input
+        type="text"
+        id="company"
+        name="company"
+        placeholder="Your company"
+        required
+      >
+
+      <label for="email">Work Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="you@company.com"
+        required
+      >
+
+      <label for="phone">Phone / WhatsApp</label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        placeholder="+254 ..."
+      >
+
+      <label for="industry">Industry</label>
+      <select id="industry" name="industry" required>
+        <option value="" selected disabled>Select your industry</option>
+        <option value="Agriculture & Food">Agriculture & Food</option>
+        <option value="Automotive & Mobility">Automotive & Mobility</option>
+        <option value="Construction & Building Materials">Construction & Building Materials</option>
+        <option value="Consumer Goods">Consumer Goods</option>
+        <option value="Energy & Renewables">Energy & Renewables</option>
+        <option value="Healthcare & Medical">Healthcare & Medical</option>
+        <option value="Industrial & Manufacturing">Industrial & Manufacturing</option>
+        <option value="Technology & Electronics">Technology & Electronics</option>
+        <option value="Textiles & Apparel">Textiles & Apparel</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="product">Product / Solution</label>
+      <select id="product" name="product" required disabled>
+        <option value="" selected disabled>
+          Select an industry first
+        </option>
+      </select>
+
+      <label for="message">Tell us about your opportunity</label>
+      <textarea
+        id="message"
+        name="message"
+        rows="5"
+        placeholder="Tell us about your company, products and expansion objectives."
+        required
+      ></textarea>
+
+      <button type="submit" class="btn btn-primary enquiry-submit">
+        Send Enquiry
+      </button>
+
+      <div class="form-success" id="form-success">
+        Thank you. Your enquiry has been received. We will be in touch shortly.
+      </div>
+
+      <div class="form-error" id="form-error">
+        Something went wrong. Please try again or email us directly at
+        hello@delisonconnect.com.
+      </div>
+
+    </form>
+
+  </div>
+</div>
 
   <footer>
     <div class="container">
