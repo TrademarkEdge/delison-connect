@@ -1026,5 +1026,101 @@
     </div>
   </footer>
 
+<script>
+  const contactModal = document.getElementById("contact-modal");
+  const openContact = document.getElementById("open-enquiry");
+  const closeContact = document.getElementById("close-contact-modal");
+
+  if (openContact && contactModal) {
+    openContact.addEventListener("click", function () {
+      contactModal.classList.add("active");
+      document.body.style.overflow = "hidden";
+    });
+  }
+
+  if (closeContact && contactModal) {
+    closeContact.addEventListener("click", function () {
+      contactModal.classList.remove("active");
+      document.body.style.overflow = "";
+    });
+  }
+
+  if (contactModal) {
+    contactModal.addEventListener("click", function (event) {
+      if (event.target === contactModal) {
+        contactModal.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+    });
+  }
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && contactModal) {
+      contactModal.classList.remove("active");
+      document.body.style.overflow = "";
+    }
+  });
+<div id="contact-modal" class="contact-modal">
+  <div class="contact-modal-content">
+
+    <button type="button" class="contact-modal-close" id="close-contact-modal" aria-label="Close">
+      &times;
+    </button>
+
+    <h3>Tell Us About Your Opportunity</h3>
+    <p>Share a few details about your company and what you are looking to achieve in East Africa.</p>
+
+    <form action="https://formspree.io/f/xaewkwkj" method="POST" class="contact-form">
+
+      <input type="hidden" name="_subject" value="New Delison Connect Enquiry">
+
+      <div>
+        <label for="modal-name">Full Name</label>
+        <input type="text" id="modal-name" name="name" placeholder="Your full name" required>
+      </div>
+
+      <div>
+        <label for="modal-company">Company Name</label>
+        <input type="text" id="modal-company" name="company" placeholder="Your company" required>
+      </div>
+
+      <div>
+        <label for="modal-email">Work Email</label>
+        <input type="email" id="modal-email" name="email" placeholder="you@company.com" required>
+      </div>
+
+      <div>
+        <label for="modal-phone">Phone / WhatsApp</label>
+        <input type="tel" id="modal-phone" name="phone" placeholder="+254 ...">
+      </div>
+
+      <div>
+        <label for="modal-industry">Product / Industry</label>
+        <select id="modal-industry" name="industry" required>
+          <option value="" disabled selected>Select your industry</option>
+          <option value="Manufacturing">Manufacturing</option>
+          <option value="Automotive">Automotive</option>
+          <option value="Energy & Infrastructure">Energy & Infrastructure</option>
+          <option value="Construction & Building Materials">Construction & Building Materials</option>
+          <option value="Agriculture & Food">Agriculture & Food</option>
+          <option value="Consumer Goods">Consumer Goods</option>
+          <option value="Healthcare">Healthcare</option>
+          <option value="Technology">Technology</option>
+          <option value="Beauty & Personal Care">Beauty & Personal Care</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="modal-message">Tell Us About Your Opportunity</label>
+        <textarea id="modal-message" name="message" rows="5" placeholder="Tell us about your company, products and expansion objectives." required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Send Enquiry</button>
+
+    </form>
+  </div>
+</div>
+</script>
 </body>
 </html>
